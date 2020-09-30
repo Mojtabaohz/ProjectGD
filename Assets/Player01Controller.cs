@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharController : MonoBehaviour
+public class Player01Controller : MonoBehaviour
 {
     [SerializeField]
     float moveSpeed = 4f;
-
     Vector3 forward, right;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +19,10 @@ public class CharController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.anyKey)
+        if(Input.anyKey){
             Move();
+    }
+
     }
 
     void Move()
@@ -32,9 +32,13 @@ public class CharController : MonoBehaviour
         Vector3 upMovement = forward * moveSpeed * Time.deltaTime * Input.GetAxis("VerticalKey");
 
         Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
+        
 
         transform.forward = heading;
         transform.position += rightMovement;
         transform.position += upMovement;
     }
+
+    
+    
 }
