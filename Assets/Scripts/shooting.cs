@@ -27,7 +27,7 @@ public class shooting : MonoBehaviour
             shootCD = true;
             ShootSign.SetActive(true);
         }
-        if(Input.GetKeyDown(KeyCode.Space)){
+        if(Input.GetButtonDown("ShootKey")){
             if(shootCD){
                 shootCD = false;
                 ShootSign.SetActive(false);
@@ -48,10 +48,7 @@ public class shooting : MonoBehaviour
                 print("shooting is on cooldown");
             }
         }
-        else{
-
-
-        }
+        
             
            
            

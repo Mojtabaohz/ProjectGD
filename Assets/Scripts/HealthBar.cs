@@ -16,7 +16,7 @@ public void SetMaxHealth(int health){
     fill.color = gradient.Evaluate(1f);
 }
     public void SetHealth(int health){
-        slider.value = health;
+        slider.value = health; 
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
     // Start is called before the first frame update

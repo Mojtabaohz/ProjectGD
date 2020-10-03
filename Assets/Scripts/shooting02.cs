@@ -18,7 +18,7 @@ public class shooting02 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("shoot02")){
+        if(Input.GetButtonDown("ShootKey02")){
             GameObject TemporaryBullethandler;
             TemporaryBullethandler = Instantiate(bullet,bulletEmitter.transform.position, bulletEmitter.transform.rotation) as GameObject;
 
