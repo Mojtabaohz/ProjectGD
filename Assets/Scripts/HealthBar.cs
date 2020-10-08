@@ -5,23 +5,37 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
+    [SerializeField]
+    public int maxHealth;
+    public int currentHealth;
+
     public Slider slider;
     public Gradient gradient;
     public Image fill;
 
-public void SetMaxHealth(int health){
-    slider.maxValue = health;
-    slider.value = health;
-    
-    fill.color = gradient.Evaluate(1f);
-}
+    public void TakeDamage(int damage){
+        currentHealth -= damage;
+        SetHealth(currentHealth);
+        Debug.Log("damage Taken");
+    }
+
     public void SetHealth(int health){
         slider.value = health; 
         fill.color = gradient.Evaluate(slider.normalizedValue);
+        Debug.Log("damage Applied");
     }
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
+        currentHealth = maxHealth;
+        slider.maxValue = maxHealth;
+        SetHealth(currentHealth);
+        fill.color = gradient.Evaluate(1f);
+        
         
     }
 
