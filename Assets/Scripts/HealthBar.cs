@@ -8,21 +8,29 @@ public class HealthBar : MonoBehaviour
     [SerializeField]
     public int maxHealth;
     public int currentHealth;
+    public bool alive = true;
 
     public Slider slider;
     public Gradient gradient;
     public Image fill;
 
     public void TakeDamage(int damage){
+        if(!alive){
+            return;
+        }
+
+        if(currentHealth <= 0){
+            currentHealth = 0;
+            alive = false;
+            gameObject.SetActive(false);
+        }
         currentHealth -= damage;
         SetHealth(currentHealth);
-        Debug.Log("damage Taken");
     }
 
     public void SetHealth(int health){
         slider.value = health; 
         fill.color = gradient.Evaluate(slider.normalizedValue);
-        Debug.Log("damage Applied");
     }
 
 
@@ -31,6 +39,7 @@ public class HealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        alive = true;
         currentHealth = maxHealth;
         slider.maxValue = maxHealth;
         SetHealth(currentHealth);
