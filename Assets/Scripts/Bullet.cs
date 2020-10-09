@@ -23,6 +23,7 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter(Collider other){
         
         DoDamage(damage,other);
+        gameObject.SetActive(false);
     }
 
 

@@ -11,7 +11,7 @@ public class shooting : MonoBehaviour
     public bool shootCD = true;
     public int shootTimer = 4;
     protected float Timer;
-    public GameObject ShootSign;
+    public GameObject shootSign;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,16 +21,21 @@ public class shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Timer += Time.deltaTime;
-        if(Timer >= shootTimer){
-            Timer = 0;
-            shootCD = true;
-            ShootSign.SetActive(true);
-        }
+        ShootSign(shootCD);
+        
         if(Input.GetButtonDown("ShootKey")){
-            if(shootCD){
+            Shoot();
+        }
+        
+            
+           
+           
+        
+    }
+    void Shoot(){
+        if(shootCD){
                 shootCD = false;
-                ShootSign.SetActive(false);
+                shootSign.SetActive(false);
                 GameObject TemporaryBullethandler;
                 TemporaryBullethandler = Instantiate(bullet,bulletEmitter.transform.position, bulletEmitter.transform.rotation) as GameObject;
 
@@ -47,12 +52,17 @@ public class shooting : MonoBehaviour
 
                 print("shooting is on cooldown");
             }
+    }
+
+    void ShootSign(bool SCD){
+        if(!SCD){
+            Timer += Time.deltaTime;
+            if(Timer >= shootTimer){
+                Timer = 0;
+                shootCD = true;
+                shootSign.SetActive(true);
+            }
         }
-        
-            
-           
-           
-        
     }
    
 }
