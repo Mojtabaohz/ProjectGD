@@ -21,6 +21,9 @@ public class Player02Controller : MonoBehaviour
     {
         if(Input.anyKey){
             Move();
+            if(Input.GetButtonDown("ShootKey02")){
+            gameObject.GetComponent<shooting>().Shoot();
+            }
     }
 
     }

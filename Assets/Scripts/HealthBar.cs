@@ -20,6 +20,7 @@ public class HealthBar : MonoBehaviour
         }
         currentHealth -= damage;
         SetHealth(currentHealth);
+        
         if(currentHealth <= 0){
             currentHealth = 0;
             alive = false;

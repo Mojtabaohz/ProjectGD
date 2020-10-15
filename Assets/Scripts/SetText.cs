@@ -9,6 +9,7 @@ public class SetText : MonoBehaviour
     void Start()
     {
         result.GetComponent<Text>().text = Manager.Instance.result.text;
+        
     }
 
     // Update is called once per frame
