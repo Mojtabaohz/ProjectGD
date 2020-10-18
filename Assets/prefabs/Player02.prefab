@@ -465,7 +465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39512d4b7fcf2ff479189e07fe73bcae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 5
   currentHealth: 0
   alive: 1
   slider: {fileID: 2691012386920947807}
@@ -513,7 +513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletEmitter: {fileID: 7644228115634559099}
   bullet: {fileID: 5969628609626260578, guid: 358cb4aac593f564cabdfaa2af538e11, type: 3}
-  bulletSpeed: 100
+  bulletSpeed: 1000
   shootCD: 1
   ammoCount: 0
   shootTimer: 4

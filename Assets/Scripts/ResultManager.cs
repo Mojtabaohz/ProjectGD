@@ -11,6 +11,21 @@ public class ResultManager : MonoBehaviour
     public Vector3 player01RP;
     public GameObject player02;
     public Vector3 player02RP;
+
+    [SerializeField]
+    public int xMaxPos = 40;
+    public int xMinPos = 10;
+    public int zMaxPos = 40;
+    public int zMinPos = 5;
+    public int yPos = 4;
+    public float spawnRate = 2f;
+    public int maxAmmoBox = 2;
+    private int spawnedBox = 0 ;
+    public GameObject[] ammoBox;
+
+    protected float Timer;
+    
+
     void Start()
     {
         
@@ -25,6 +40,15 @@ public class ResultManager : MonoBehaviour
         
         if(!player01.GetComponent<HealthBar>().alive || !player02.GetComponent<HealthBar>().alive){
             Respawning();
+        }
+
+        if(spawnedBox <= maxAmmoBox ){
+        Timer += Time.deltaTime;
+            if(Timer >= spawnRate){
+                Timer = 0;
+                spawnedBox += 1;
+                Instantiate(RandomBox(),RandomPos(),Quaternion.identity);
+            }
         }
         
     }
@@ -55,5 +79,15 @@ public class ResultManager : MonoBehaviour
         obj.GetComponent<HealthBar>().SetHealth(obj.GetComponent<HealthBar>().maxHealth);
         obj.SetActive(true);
 
+    }
+
+    GameObject RandomBox(){
+        GameObject tempBox;
+        tempBox = ammoBox[Random.Range(0, ammoBox.Length)];
+        return tempBox;
+    }
+    Vector3 RandomPos(){
+        Vector3 randomPos = new Vector3(Random.Range(xMinPos,xMaxPos),yPos,Random.Range(zMinPos,zMaxPos));
+        return randomPos;
     }
 }
