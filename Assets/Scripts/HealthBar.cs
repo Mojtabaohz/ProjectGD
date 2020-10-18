@@ -18,14 +18,15 @@ public class HealthBar : MonoBehaviour
         if(!alive){
             return;
         }
-
+        currentHealth -= damage;
+        SetHealth(currentHealth);
+        
         if(currentHealth <= 0){
             currentHealth = 0;
             alive = false;
             gameObject.SetActive(false);
         }
-        currentHealth -= damage;
-        SetHealth(currentHealth);
+        
     }
 
     public void SetHealth(int health){

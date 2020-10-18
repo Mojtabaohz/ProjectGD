@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public int speed = 1000;
-    public int damage =  5;
+    public int bulletSpeed = 1000;
+    public int dmg =  5;
+    public bool aoe = false;
     //public bool damageOverTime = false;
     //public float damageInterval = 1f;
     //public float damageOverTimeDuration = 2f;
@@ -21,9 +22,12 @@ public class Bullet : MonoBehaviour
 
 
     void OnTriggerEnter(Collider other){
+        if(other.gameObject.tag.Equals("Player") || other.gameObject.tag.Equals("Base")){
+            DoDamage(dmg,other);
+            gameObject.SetActive(false);
+        }
+        //DoDamage(damage,other);
         
-        DoDamage(damage,other);
-        gameObject.SetActive(false);
     }
 
 
@@ -31,7 +35,9 @@ public class Bullet : MonoBehaviour
         //if(damageOverTime){
         //    DoDamageOverTime(damageOverTimeDuration);
         //}
-        other.gameObject.GetComponent<HealthBar>().TakeDamage(damage);
+            other.gameObject.GetComponent<HealthBar>().TakeDamage(damage);
+        
+        
     }
 
     //void DoDamageOverTime(float duration){

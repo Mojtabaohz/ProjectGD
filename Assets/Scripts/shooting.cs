@@ -9,6 +9,7 @@ public class shooting : MonoBehaviour
     public float bulletSpeed = 100f;
  
     public bool shootCD = true;
+    public int ammoCount = 0 ;
     public int shootTimer = 4;
     protected float Timer;
     public GameObject shootSign;
@@ -21,18 +22,9 @@ public class shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ShootSign(shootCD);
-        
-        if(Input.GetButtonDown("ShootKey")){
-            Shoot();
-        }
-        
-            
-           
-           
-        
+        ShootSign(shootCD); 
     }
-    void Shoot(){
+    public void Shoot(){
         if(shootCD){
                 shootCD = false;
                 shootSign.SetActive(false);

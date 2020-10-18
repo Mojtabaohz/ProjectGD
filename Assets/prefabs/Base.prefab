@@ -107,8 +107,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39512d4b7fcf2ff479189e07fe73bcae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 10
   currentHealth: 0
+  alive: 1
   slider: {fileID: 8888903279535878550}
   gradient:
     serializedVersion: 2
@@ -256,6 +257,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665667800363421442, guid: cf9dab070e9d0dd458d210ce8b56f98e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 69.3
       objectReference: {fileID: 0}
     - target: {fileID: 5205287248681430080, guid: cf9dab070e9d0dd458d210ce8b56f98e,
         type: 3}

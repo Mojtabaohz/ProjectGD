@@ -21,6 +21,10 @@ public class Player01Controller : MonoBehaviour
     {
         if(Input.anyKey){
             Move();
+            if(Input.GetButtonDown("ShootKey")){
+            gameObject.GetComponent<shooting>().Shoot();
+            //Shoot();
+        }
     }
 
     }
