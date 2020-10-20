@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5969628609626260583}
   - component: {fileID: 5969628609626260580}
   - component: {fileID: 5969628609626260581}
-  - component: {fileID: -6422535576064621210}
   - component: {fileID: 593960496196559656}
   - component: {fileID: 5006485747005963200}
   m_Layer: 0
@@ -63,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6cc146c3e43bc143ad3fbf322cf8c6c, type: 2}
+  - {fileID: 2100000, guid: b4a35116810bf384fbf33b5aeb394f4c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -113,18 +112,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-6422535576064621210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5969628609626260578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8de4b3dad8a7d1f43a3075e91ee795dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &593960496196559656
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -150,5 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f324190895b094a9a634f6694fa06b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1000
-  damage: 5
+  bulletSpeed: 1000
+  dmg: 0
+  aoe: 0
+  aoeDmg: 0

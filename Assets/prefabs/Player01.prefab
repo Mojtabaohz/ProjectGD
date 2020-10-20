@@ -156,10 +156,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletEmitter: {fileID: 4275085818891155915}
   bullet: {fileID: 5969628609626260578, guid: 358cb4aac593f564cabdfaa2af538e11, type: 3}
+  dmg: 0
   bulletSpeed: 1000
   shootCD: 1
   ammoCount: 0
-  shootTimer: 4
+  reloadSpeed: 4
   shootSign: {fileID: 3798840817738077487}
 --- !u!114 &8900361748702793232
 MonoBehaviour:

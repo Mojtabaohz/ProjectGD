@@ -209,11 +209,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player01
       objectReference: {fileID: 0}
-    - target: {fileID: 2317134516550594329, guid: cd80bccb21dc64b40ba3882cc1add490,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2317134516550594335, guid: cd80bccb21dc64b40ba3882cc1add490,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -303,20 +298,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2950068460191158146, guid: 1284253b9710b7b4b9bf0baaadf50978,
-        type: 3}
-      propertyPath: maxHealth
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3611939259984435107, guid: 1284253b9710b7b4b9bf0baaadf50978,
         type: 3}
       propertyPath: m_Name
       value: Base (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3611939259984435107, guid: 1284253b9710b7b4b9bf0baaadf50978,
-        type: 3}
-      propertyPath: m_TagString
-      value: Base
       objectReference: {fileID: 0}
     - target: {fileID: 3611939259984435111, guid: 1284253b9710b7b4b9bf0baaadf50978,
         type: 3}
@@ -714,16 +699,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Base
       objectReference: {fileID: 0}
-    - target: {fileID: 577165946134514159, guid: 053313b7c5f41f44bad5400f7b790aa9,
-        type: 3}
-      propertyPath: m_TagString
-      value: Base
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356165552252588494, guid: 053313b7c5f41f44bad5400f7b790aa9,
-        type: 3}
-      propertyPath: maxHealth
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 2546912556297302544, guid: 053313b7c5f41f44bad5400f7b790aa9,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -943,11 +918,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7851556810256387884, guid: 2f59b66c3bf203743a620bf48a90e539,
         type: 3}
-      propertyPath: ammoBox.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7851556810256387884, guid: 2f59b66c3bf203743a620bf48a90e539,
-        type: 3}
       propertyPath: player01Base
       value: 
       objectReference: {fileID: 1398334166}
@@ -966,33 +936,6 @@ PrefabInstance:
       propertyPath: player02
       value: 
       objectReference: {fileID: 1399863411}
-    - target: {fileID: 7851556810256387884, guid: 2f59b66c3bf203743a620bf48a90e539,
-        type: 3}
-      propertyPath: ammoBox.Array.data[0]
-      value: 
-      objectReference: {fileID: 3677087452078509816, guid: 5dd24ba6758439c48a388230763649ed,
-        type: 3}
-    - target: {fileID: 7851556810256387884, guid: 2f59b66c3bf203743a620bf48a90e539,
-        type: 3}
-      propertyPath: ammoBox.Array.data[1]
-      value: 
-      objectReference: {fileID: 456094577313406066, guid: 0fac00da9b3d887408209c4aa3d7cbde,
-        type: 3}
-    - target: {fileID: 7851556810256387884, guid: 2f59b66c3bf203743a620bf48a90e539,
-        type: 3}
-      propertyPath: xPos
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 7851556810256387884, guid: 2f59b66c3bf203743a620bf48a90e539,
-        type: 3}
-      propertyPath: zPos
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 7851556810256387884, guid: 2f59b66c3bf203743a620bf48a90e539,
-        type: 3}
-      propertyPath: spawnRate
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 7851556810256387885, guid: 2f59b66c3bf203743a620bf48a90e539,
         type: 3}
       propertyPath: m_Name

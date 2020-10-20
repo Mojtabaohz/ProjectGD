@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     public int bulletSpeed = 1000;
     public int dmg =  5;
     public bool aoe = false;
+    public int aoeDmg = 0;
     //public bool damageOverTime = false;
     //public float damageInterval = 1f;
     //public float damageOverTimeDuration = 2f;
@@ -24,7 +25,9 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter(Collider other){
         if(other.gameObject.tag.Equals("Player") || other.gameObject.tag.Equals("Base")){
             DoDamage(dmg,other);
-            gameObject.SetActive(false);
+            Destroy(gameObject,0.1f);
+            //gameObject.SetActive(false);
+            
         }
         //DoDamage(damage,other);
         

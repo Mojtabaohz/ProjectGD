@@ -49,3 +49,15 @@ MonoBehaviour:
   player01RP: {x: 10, y: 2, z: 20}
   player02: {fileID: 0}
   player02RP: {x: 40, y: 2, z: 20}
+  xMaxPos: 40
+  xMinPos: 10
+  zMaxPos: 40
+  zMinPos: 5
+  yPos: 4
+  spawnRate: 5
+  maxAmmoBox: 2
+  newWeapons:
+  - {fileID: 2967579005242940824, guid: 5fa87b9fd23bcd54e814cbde12f803e1, type: 3}
+  - {fileID: 456094577313406066, guid: 0fac00da9b3d887408209c4aa3d7cbde, type: 3}
+  defaultWeapon: {fileID: 3677087452078509816, guid: 5dd24ba6758439c48a388230763649ed,
+    type: 3}

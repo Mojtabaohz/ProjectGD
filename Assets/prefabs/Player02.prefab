@@ -513,10 +513,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletEmitter: {fileID: 7644228115634559099}
   bullet: {fileID: 5969628609626260578, guid: 358cb4aac593f564cabdfaa2af538e11, type: 3}
+  dmg: 0
   bulletSpeed: 1000
   shootCD: 1
   ammoCount: 0
-  shootTimer: 4
+  reloadSpeed: 4
   shootSign: {fileID: 7643661769914900476}
 --- !u!1001 &1100540188807188949
 PrefabInstance:
