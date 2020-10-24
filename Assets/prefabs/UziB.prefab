@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8072375840095541986}
   m_Layer: 0
   m_Name: UziB
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,9 +109,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f324190895b094a9a634f6694fa06b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 854921418072853638}
   bulletSpeed: 1000
   dmg: 5
   aoe: 0
+  aoeDmg: 0
+  explosive: 0
+  explosionPower: 10
+  radius: 5
+  collisionEnable: 0
 --- !u!136 &7481865099284379168
 CapsuleCollider:
   m_ObjectHideFlags: 0

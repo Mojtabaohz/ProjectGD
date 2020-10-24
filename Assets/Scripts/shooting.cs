@@ -39,6 +39,8 @@ public class shooting : MonoBehaviour
             ammoCount -= 1;
             shootCD = false;
             shootSign.SetActive(false);
+
+
             GameObject TemporaryBullethandler;
             TemporaryBullethandler = Instantiate(bullet,bulletEmitter.transform.position, bulletEmitter.transform.rotation) as GameObject;
 
@@ -47,7 +49,7 @@ public class shooting : MonoBehaviour
             Rigidbody TempRigidbody;
             TempRigidbody = TemporaryBullethandler.GetComponent<Rigidbody>();
             TempRigidbody.AddForce(transform.forward * bulletSpeed);
-
+            TemporaryBullethandler.GetComponent<Bullet>().collisionEnable = true;
             Destroy(TemporaryBullethandler, 4.0f);
                 
             }

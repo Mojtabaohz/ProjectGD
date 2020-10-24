@@ -137,7 +137,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f324190895b094a9a634f6694fa06b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 5969628609626260578}
   bulletSpeed: 1000
   dmg: 0
   aoe: 0
   aoeDmg: 0
+  explosive: 0
+  explosionPower: 10
+  radius: 5
+  collisionEnable: 0
