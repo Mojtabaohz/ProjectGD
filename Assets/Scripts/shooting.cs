@@ -8,7 +8,7 @@ public class shooting : MonoBehaviour
     public GameObject bullet;
     public int dmg;
     public float bulletSpeed = 100f;
-    public bool shootCD = true;
+    public bool loaded = true;
     public int ammoCount = 0 ;
     public float reloadSpeed = 4;
     protected float Timer;
@@ -16,13 +16,13 @@ public class shooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+       loaded = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        ShootSign(shootCD); 
+        Reload(loaded); 
     }
     public void Shoot(){
         if(ammoCount>=1){
@@ -35,14 +35,17 @@ public class shooting : MonoBehaviour
     }
 
     void Shooting(){
-        if(shootCD){
+        if(loaded){
             ammoCount -= 1;
-            shootCD = false;
+            loaded = false;
             shootSign.SetActive(false);
 
-
             GameObject TemporaryBullethandler;
-            TemporaryBullethandler = Instantiate(bullet,bulletEmitter.transform.position, bulletEmitter.transform.rotation) as GameObject;
+            TemporaryBullethandler = gameObject.transform.GetChild((gameObject.transform.childCount-1)).gameObject;
+            TemporaryBullethandler.transform.parent = null;
+            TemporaryBullethandler.GetComponent<Rigidbody>().useGravity = true;
+            TemporaryBullethandler.GetComponent<Rigidbody>().detectCollisions = true;
+            //Instantiate(bullet,bulletEmitter.transform.position, bulletEmitter.transform.rotation) as GameObject;
 
             TemporaryBullethandler.transform.Rotate(Vector3.left * 90);
 
@@ -50,7 +53,7 @@ public class shooting : MonoBehaviour
             TempRigidbody = TemporaryBullethandler.GetComponent<Rigidbody>();
             TempRigidbody.AddForce(transform.forward * bulletSpeed);
             TemporaryBullethandler.GetComponent<Bullet>().collisionEnable = true;
-            Destroy(TemporaryBullethandler, 4.0f);
+            Destroy(TemporaryBullethandler, 6.0f);
                 
             }
             else{
@@ -59,14 +62,18 @@ public class shooting : MonoBehaviour
             }
     }
 
-    void ShootSign(bool SCD){
-        if(!SCD){
+    void Reload(bool _loaded){
+        if(!_loaded){
             Timer += Time.deltaTime;
             if(Timer >= reloadSpeed){
-                Timer = 0;
-                shootCD = true;
+                Timer = 0; 
+                BulletInstantiate(gameObject.GetComponent<Collider>());
+                loaded = true;
                 shootSign.SetActive(true);
             }
+        }
+        else{
+            return;
         }
     }
 
@@ -76,6 +83,23 @@ public class shooting : MonoBehaviour
         player.GetComponent<shooting>().bullet = FindObjectOfType<ResultManager>().defaultWeapon.GetComponent<AmmoBox>().bullet;
         player.GetComponent<shooting>().dmg = FindObjectOfType<ResultManager>().defaultWeapon.GetComponent<AmmoBox>().dmg;
         player.GetComponent<shooting>().reloadSpeed = FindObjectOfType<ResultManager>().defaultWeapon.GetComponent<AmmoBox>().reloadSpeed;      
+    }
+
+    public void BulletInstantiate(Collider obj){
+        if(!loaded){
+            Timer = 0 ;
+            if(gameObject.transform.childCount < 4){
+                GameObject TemporaryBullet;
+                TemporaryBullet = Instantiate(bullet, obj.GetComponent<shooting>().bulletEmitter.transform.position, obj.GetComponent<shooting>().bulletEmitter.transform.rotation) as GameObject;
+                TemporaryBullet.GetComponent<Bullet>().collisionEnable = false;
+                TemporaryBullet.transform.Rotate(Vector3.left * 90);
+                TemporaryBullet.transform.parent = obj.GetComponent<shooting>().transform;
+                TemporaryBullet.GetComponent<Rigidbody>().useGravity = false;
+                TemporaryBullet.GetComponent<Rigidbody>().detectCollisions = false;
+            }
+        }
+            
+        
     }
    
 }

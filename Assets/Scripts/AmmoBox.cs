@@ -23,15 +23,18 @@ public class AmmoBox : MonoBehaviour
             obj.GetComponent<shooting>().bullet = bullet;
             obj.GetComponent<shooting>().dmg = dmg;
             obj.GetComponent<shooting>().reloadSpeed = reloadSpeed;
+            
             // PickUpBox will decrease the spawned box in result manager so there will be limited amount of box at every stage of the game.
             FindObjectOfType<ResultManager>().PickUpBox();
 
+            obj.GetComponent<shooting>().BulletInstantiate(obj);
             //GameObject TemporaryBullet;
             //TemporaryBullet = Instantiate(bullet, obj.GetComponent<shooting>().bulletEmitter.transform.position, obj.GetComponent<shooting>().bulletEmitter.transform.rotation) as GameObject;
             //TemporaryBullet.GetComponent<Bullet>().collisionEnable = false;
             //TemporaryBullet.transform.Rotate(Vector3.left * 90);
-            //TemporaryBullet.transform.parent = obj.GetComponent<shooting>().transform;
-            //TemporaryBullet.GetComponent<Rigidbody>().detectCollisions = false;
+           // TemporaryBullet.transform.parent = obj.GetComponent<shooting>().transform;
+           // TemporaryBullet.GetComponent<Rigidbody>().useGravity = false;
+           // TemporaryBullet.GetComponent<Rigidbody>().detectCollisions = false;
 
             Destroy(gameObject);
             
