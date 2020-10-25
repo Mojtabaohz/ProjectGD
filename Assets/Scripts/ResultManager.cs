@@ -21,7 +21,8 @@ public class ResultManager : MonoBehaviour
     public float spawnRate = 2f;
     public int maxAmmoBox = 2;
     private int spawnedBox = 0 ;
-    public GameObject[] ammoBox;
+    public GameObject[] newWeapons;
+    public GameObject defaultWeapon;
 
     protected float Timer;
     
@@ -75,6 +76,8 @@ public class ResultManager : MonoBehaviour
 
     void Respawn(GameObject obj, Vector3 RP){
         obj.GetComponent<HealthBar>().alive = true;
+        obj.GetComponent<shooting>().loaded = false;
+        obj.GetComponent<shooting>().shootSign.SetActive(false);
         obj.GetComponent<Transform>().position = RP;
         obj.GetComponent<HealthBar>().SetHealth(obj.GetComponent<HealthBar>().maxHealth);
         obj.SetActive(true);
@@ -83,11 +86,15 @@ public class ResultManager : MonoBehaviour
 
     GameObject RandomBox(){
         GameObject tempBox;
-        tempBox = ammoBox[Random.Range(0, ammoBox.Length)];
+        tempBox = newWeapons[Random.Range(0, newWeapons.Length)];
         return tempBox;
     }
     Vector3 RandomPos(){
         Vector3 randomPos = new Vector3(Random.Range(xMinPos,xMaxPos),yPos,Random.Range(zMinPos,zMaxPos));
         return randomPos;
+    }
+
+    public void PickUpBox(){
+        spawnedBox -= 1;
     }
 }

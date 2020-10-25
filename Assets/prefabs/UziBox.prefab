@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7201139084558407963}
   - component: {fileID: 2681863311462461533}
   - component: {fileID: 6917945928067397617}
-  - component: {fileID: 3125218417406562617}
   - component: {fileID: 3522726810267322505}
   - component: {fileID: -1643597554550764759}
+  - component: {fileID: 3125218417406562617}
   m_Layer: 0
   m_Name: UziBox
   m_TagString: Untagged
@@ -96,25 +96,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3125218417406562617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 456094577313406066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 874b5456444bbef4bb168ededbcee25b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dmg: 20
-  SelfDmg: 0
-  bulletSpeed: 2000
-  ammoCount: 5
-  aoe: 0
-  aoeDmg: 0
-  bullet: {fileID: 854921418072853638, guid: 8c1e7c1370878a6429edc40d98255371, type: 3}
 --- !u!65 &3522726810267322505
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -144,3 +125,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3125218417406562617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456094577313406066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 874b5456444bbef4bb168ededbcee25b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 5
+  SelfDmg: 0
+  bulletSpeed: 2000
+  reloadSpeed: 0.5
+  ammoCount: 5
+  aoe: 0
+  aoeDmg: 0
+  bullet: {fileID: 854921418072853638, guid: 8c1e7c1370878a6429edc40d98255371, type: 3}
