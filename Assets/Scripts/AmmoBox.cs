@@ -20,6 +20,7 @@ public class AmmoBox : MonoBehaviour
     private void OnTriggerEnter(Collider obj){
         if(obj.gameObject.tag.Equals("Player")){
             obj.GetComponent<shooting>().ammoCount = ammoCount;
+            obj.GetComponent<shooting>().bulletSpeed = bulletSpeed;
             obj.GetComponent<shooting>().bullet = bullet;
             obj.GetComponent<shooting>().dmg = dmg;
             obj.GetComponent<shooting>().reloadSpeed = reloadSpeed;
