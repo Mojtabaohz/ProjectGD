@@ -56,7 +56,7 @@ public class ResultManager : MonoBehaviour
 
     void EndGame(){
         if(player01Base.GetComponent<HealthBar>().alive == false){
-            Debug.Log("base has been destroyed");
+            //Debug.Log("base has been destroyed");
             Manager.Instance.result.text = "Red Wins";
             SceneManager.LoadScene("ResultScene");
         }else if(player02Base.GetComponent<HealthBar>().alive == false){

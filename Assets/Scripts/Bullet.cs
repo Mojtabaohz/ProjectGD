@@ -37,7 +37,7 @@ public class Bullet : MonoBehaviour
         if(collisionEnable & !explosive){
             if(other.gameObject.tag.Equals("Player") || other.gameObject.tag.Equals("Base")){
                 DoDamage(dmg,other);
-                Debug.Log("Damage Done");
+                //Debug.Log("Damage Done");
                 //gameObject.SetActive(false);
                 
             }
@@ -59,20 +59,24 @@ public class Bullet : MonoBehaviour
     }
 
     void Detonation(){
+        if(gameObject.transform.parent != null){
+            gameObject.transform.parent.GetComponent<shooting>().Unload();
+        }
+        
         Instantiate(bigExplosionPrefab,bullet.transform.position, bullet.transform.rotation);
         Vector3 explosionPosition = bullet.transform.position;
         Collider[] colliders = Physics.OverlapSphere(explosionPosition,radius);
-        Debug.Log("Detonation: colliders"+ colliders);
+        //Debug.Log("Detonation: colliders"+ colliders);
 
         foreach(Collider hit in colliders){
-            Debug.Log("Detonation: foreach");
+            //Debug.Log("Detonation: foreach");
             Rigidbody rb = hit.GetComponent<Rigidbody>();
             Collider cl = hit.GetComponent<Collider>();
             if(rb!= null){
                 rb.AddExplosionForce(explosionPower,explosionPosition,radius,0,ForceMode.Impulse);
             }
             if(cl!= null){
-                Debug.Log("Detonation: Damage cl");
+                //Debug.Log("Detonation: Damage cl");
                 DoDamage(dmg,cl);
             }
             

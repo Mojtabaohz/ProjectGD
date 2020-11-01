@@ -19,6 +19,12 @@ public class AmmoBox : MonoBehaviour
     }
     private void OnTriggerEnter(Collider obj){
         if(obj.gameObject.tag.Equals("Player")){
+            //Debug.Log("Object report "+ obj.gameObject + " . " + obj.gameObject.transform.GetChild(1));
+            if(obj.gameObject.GetComponent<shooting>().loaded){
+                obj.gameObject.GetComponent<shooting>().DestroyCurrentBullet(obj.gameObject.transform.GetChild((obj.gameObject.transform.childCount-1)).gameObject);
+                obj.gameObject.GetComponent<shooting>().Unload();
+            }
+            
             obj.GetComponent<shooting>().ammoCount = ammoCount;
             obj.GetComponent<shooting>().bulletSpeed = bulletSpeed;
             obj.GetComponent<shooting>().bullet = bullet;

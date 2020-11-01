@@ -25,21 +25,14 @@ public class shooting : MonoBehaviour
         Reload(loaded); 
     }
     public void Shoot(){
-        if(ammoCount>=1){
+        
             Shooting();
-        }
-        else if(ammoCount <= 0){
-            SetDefaultWeapon(this.gameObject);
-            Shooting();
-        }
+
     }
 
     void Shooting(){
         if(loaded){
-            ammoCount -= 1;
-            loaded = false;
-            shootSign.SetActive(false);
-
+            Unload();
             GameObject TemporaryBullethandler;
             TemporaryBullethandler = gameObject.transform.GetChild((gameObject.transform.childCount-1)).gameObject;
             TemporaryBullethandler.transform.parent = null;
@@ -67,7 +60,18 @@ public class shooting : MonoBehaviour
             Timer += Time.deltaTime;
             if(Timer >= reloadSpeed){
                 Timer = 0; 
-                BulletInstantiate(gameObject.GetComponent<Collider>());
+                if(ammoCount < 0){
+                    BulletInstantiate(gameObject.GetComponent<Collider>());
+                }
+                else if(ammoCount>0){
+                    BulletInstantiate(gameObject.GetComponent<Collider>());
+                    ammoCount -= 1;
+                }
+                else if(ammoCount == 0 ){
+                    SetDefaultWeapon(this.gameObject);
+                    BulletInstantiate(gameObject.GetComponent<Collider>());
+                    ammoCount -= 1;
+                }
                 loaded = true;
                 shootSign.SetActive(true);
             }
@@ -98,8 +102,16 @@ public class shooting : MonoBehaviour
                 TemporaryBullet.GetComponent<Rigidbody>().detectCollisions = false;
             }
         }
-            
-        
+    }
+
+    public void DestroyCurrentBullet(GameObject currentBullet){
+        Destroy(currentBullet);
+    }
+
+    public void Unload(){
+        loaded = false;
+        shootSign.SetActive(false);
+
     }
    
 }
