@@ -13,6 +13,9 @@ public class shooting : MonoBehaviour
     public float reloadSpeed = 4;
     protected float Timer;
     public GameObject shootSign;
+    public AudioSource ShootSound;
+    public AudioSource ReloadSound;
+    public AudioSource UziSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,11 +50,17 @@ public class shooting : MonoBehaviour
             TempRigidbody.AddForce(transform.forward * bulletSpeed);
             TemporaryBullethandler.GetComponent<Bullet>().collisionEnable = true;
             Destroy(TemporaryBullethandler, 6.0f);
-                
+                if (bulletSpeed>1000){
+                    UziSound.Play(); 
+                }
+                else{
+                    ShootSound.Play();
+                }                
             }
             else{
 
                 print("shooting is on cooldown");
+                ReloadSound.Play();
             }
     }
 
