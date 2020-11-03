@@ -14,6 +14,7 @@ public class Player01Controller : MonoBehaviour
         forward.y = 0;
         forward = Vector3.Normalize(forward);
         right =Quaternion.Euler(new Vector3(0,90,0)) * forward;
+        
     }
 
     // Update is called once per frame
@@ -23,13 +24,8 @@ public class Player01Controller : MonoBehaviour
             Move();
             if(Input.GetButtonDown("ShootKey")){
             gameObject.GetComponent<shooting>().Shoot();
-                if(gameObject.GetComponent<shooting>().ammoCount==0){
-                    
-                }
+            }
         }
-
-    }
-
     }
 
     void Move()
@@ -46,6 +42,8 @@ public class Player01Controller : MonoBehaviour
         transform.position += upMovement;
     }
 
-    
-    
+    public void SpeedBuff(float _SpeedBuff){
+        moveSpeed += _SpeedBuff;
+        Debug.Log("SpeedBuff move speed" + moveSpeed);       
+    }
 }
