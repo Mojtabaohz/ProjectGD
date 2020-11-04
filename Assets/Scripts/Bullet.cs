@@ -37,8 +37,8 @@ public class Bullet : MonoBehaviour
         if(collisionEnable & !explosive){
             if(other.gameObject.tag.Equals("Player") || other.gameObject.tag.Equals("Base")){
                 DoDamage(dmg,other);
-                //Debug.Log("Damage Done");
-                //gameObject.SetActive(false);
+                //Debug.Log("Damage Done" + dmg);
+                gameObject.SetActive(false);
                 
             }
         }
@@ -55,7 +55,7 @@ public class Bullet : MonoBehaviour
             other.gameObject.GetComponent<HealthBar>().TakeDamage(damage);
         }
         //Debug.Log("destroy bullet");
-        Destroy(gameObject,0.1f);
+        Destroy(gameObject,0f);
                     
     }
 
