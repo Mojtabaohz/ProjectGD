@@ -13,6 +13,7 @@ public class HealthBar : MonoBehaviour
     public Slider slider;
     public Gradient gradient;
     public Image fill;
+    public AudioSource DestroySound;
 
     public void TakeDamage(int damage){
         if(!alive){
@@ -22,9 +23,11 @@ public class HealthBar : MonoBehaviour
         SetHealth(currentHealth);
         
         if(currentHealth <= 0){
+            DestroySound.Play();
             currentHealth = 0;
             alive = false;
             gameObject.SetActive(false);
+            
         }
         
     }

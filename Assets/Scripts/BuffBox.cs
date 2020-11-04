@@ -13,7 +13,12 @@ public class BuffBox : MonoBehaviour
     public void OnTriggerEnter(Collider obj){
         if(obj.gameObject.tag.Equals("Player")){
             if(selfHealth!=0){
-                obj.GetComponent<HealthBar>().TakeDamage(-selfHealth);
+                if(obj.GetComponent<HealthBar>().currentHealth +selfHealth > obj.GetComponent<HealthBar>().maxHealth){
+                    obj.GetComponent<HealthBar>().currentHealth = obj.GetComponent<HealthBar>().maxHealth;
+                }
+                else{
+                    obj.GetComponent<HealthBar>().TakeDamage(-selfHealth);
+                }
             }
             if(baseHealth!=0){
                 obj.GetComponent<shooting>().playerBase.GetComponent<HealthBar>().TakeDamage(-baseHealth);
