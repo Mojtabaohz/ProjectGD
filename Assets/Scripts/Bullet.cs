@@ -36,7 +36,7 @@ public class Bullet : MonoBehaviour
             if(other.gameObject.tag.Equals("Player") || other.gameObject.tag.Equals("Base")){
                 DoDamage(dmg,other);
                 //Debug.Log("Damage Done");
-                //gameObject.SetActive(false);
+                gameObject.SetActive(false);
                 
             }
         }

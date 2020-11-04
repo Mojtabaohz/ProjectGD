@@ -54,7 +54,11 @@ public class shooting : MonoBehaviour
 
             Rigidbody TempRigidbody;
             TempRigidbody = TemporaryBullethandler.GetComponent<Rigidbody>();
-            TempRigidbody.AddForce(transform.forward * bulletSpeed);
+            TempRigidbody.AddForce(transform.forward * (bulletSpeed + moveSpeed));
+            if(bullet.name == "bullet" || bullet.name == "Bomb"){
+                TempRigidbody.AddForce(transform.up *  (bulletSpeed/2));
+            }
+            
             TemporaryBullethandler.GetComponent<Bullet>().collisionEnable = true;
             Destroy(TemporaryBullethandler, 6.0f);
                 if (bulletSpeed>1000){

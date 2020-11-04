@@ -138,6 +138,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selfHealth: 20
-  baseHealth: 100
-  speedBuff: 10
+  baseHealth: 200
+  speedBuff: 3
   speedBuffDuration: 5
