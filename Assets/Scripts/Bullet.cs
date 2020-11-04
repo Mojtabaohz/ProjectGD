@@ -7,8 +7,6 @@ public class Bullet : MonoBehaviour
     public GameObject bullet;
     public int bulletSpeed = 1000;
     public int dmg =  5;
-    public bool aoe = false;
-    public int aoeDmg = 0;
     public bool explosive = false;
     public float explosionPower = 10.0f;
     public float radius = 5.0f;

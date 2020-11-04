@@ -5,12 +5,9 @@ using UnityEngine;
 public class AmmoBox : MonoBehaviour
 {
     public int dmg = 0 ;
-    public int SelfDmg = 0 ;
     public int bulletSpeed = 100;
     public float reloadSpeed = 2f;
     public int ammoCount = 1; 
-    public bool aoe = false;
-    public int aoeDmg = 0;
     public GameObject bullet;
     
     // Start is called before the first frame update
