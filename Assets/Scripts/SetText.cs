@@ -9,6 +9,15 @@ public class SetText : MonoBehaviour
     void Start()
     {
         result.GetComponent<Text>().text = Manager.Instance.result.text;
+        if(result.GetComponent<Text>().text == "Red"){
+            GameObject.FindGameObjectWithTag("RedWin").SetActive(true);
+            GameObject.FindGameObjectWithTag("BlueWin").SetActive(false);
+
+        }
+        else{
+            GameObject.FindGameObjectWithTag("RedWin").SetActive(false);
+            GameObject.FindGameObjectWithTag("BlueWin").SetActive(true);
+        }
         
     }
 

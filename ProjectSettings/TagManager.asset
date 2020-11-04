@@ -8,6 +8,8 @@ TagManager:
   - bullet
   - Base
   - plane
+  - BlueWin
+  - RedWin
   layers:
   - Default
   - TransparentFX
