@@ -7,20 +7,27 @@ public class SetText : MonoBehaviour
 {
     // Start is called before the first frame update
     public Text result;
+    public GameObject tapScreen;
     private float timer = 0;
-    private float delay = 10.0f;
+    private float delay = 3.0f;
     void Start()
     {
+        tapScreen.SetActive(false);
+        
         result.GetComponent<Text>().text = Manager.Instance.result.text;
         if(result.GetComponent<Text>().text == "Red"){
             GameObject.FindGameObjectWithTag("RedWin").SetActive(true);
             GameObject.FindGameObjectWithTag("BlueWin").SetActive(false);
+            
 
         }
         else{
             GameObject.FindGameObjectWithTag("RedWin").SetActive(false);
             GameObject.FindGameObjectWithTag("BlueWin").SetActive(true);
+            
+            
         }
+        Invoke("DisplayText",3f);
         
     }
 
@@ -28,15 +35,17 @@ public class SetText : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer > delay){
+        if(timer > delay){            
             if(Input.anyKey){
             SceneManager.LoadScene("TitleScene");
+            Debug.Log("activate the text");
             }
         }
         
         
     }
 
-    public void SetWinnerText(){
+    void DisplayText(){
+        tapScreen.SetActive(true);
     }
 }

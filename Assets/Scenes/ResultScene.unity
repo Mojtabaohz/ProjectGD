@@ -455,6 +455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   result: {fileID: 583247418}
+  tapScreen: {fileID: 1226224224}
 --- !u!1 &589597587
 GameObject:
   m_ObjectHideFlags: 0
