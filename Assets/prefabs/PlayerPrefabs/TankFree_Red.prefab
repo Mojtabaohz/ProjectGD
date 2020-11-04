@@ -643,6 +643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletEmitter: {fileID: 8499956493740166977}
   bullet: {fileID: 0}
+  playerBase: {fileID: 0}
   dmg: 0
   bulletSpeed: 100
   loaded: 1
@@ -654,7 +655,7 @@ MonoBehaviour:
   ShootSound: {fileID: 0}
   ReloadSound: {fileID: 0}
   UziSound: {fileID: 0}
-  moveSpeed: 4
+  moveSpeed: 8
 --- !u!114 &-2287614290808857212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,7 +668,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cda8f745ac3e8040ad790a82b745b67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  forward: {x: 0, y: 0, z: 0}
+  right: {x: 0, y: 0, z: 0}
 --- !u!54 &-6530787786038264053
 Rigidbody:
   m_ObjectHideFlags: 0
