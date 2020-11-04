@@ -6,16 +6,22 @@ public class shooting : MonoBehaviour
 {
     public GameObject bulletEmitter;
     public GameObject bullet;
+    public GameObject playerBase;
     public int dmg;
     public float bulletSpeed = 100f;
     public bool loaded = true;
     public int ammoCount = 0 ;
     public float reloadSpeed = 4;
     protected float Timer;
+    protected float buffTimer;
+    public bool Buff;
+    public float buffDuration;
     public GameObject shootSign;
     public AudioSource ShootSound;
     public AudioSource ReloadSound;
     public AudioSource UziSound;
+    public float moveSpeed;
+    public float MS = 4f;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +32,7 @@ public class shooting : MonoBehaviour
     void Update()
     {
         Reload(loaded); 
+        BuffCheck(Buff);
     }
     public void Shoot(){
         
@@ -87,6 +94,17 @@ public class shooting : MonoBehaviour
         }
         else{
             return;
+        }
+    }
+
+    void BuffCheck(bool _buff){
+        if(_buff){
+        buffTimer += Time.deltaTime;
+            if(buffTimer >= buffDuration){
+                buffTimer = 0;
+                moveSpeed = MS;
+                Buff = false;
+            }
         }
     }
 

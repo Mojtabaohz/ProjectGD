@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player02Controller : MonoBehaviour
 {
     [SerializeField]
-    float moveSpeed = 4f;
+    
     Vector3 forward, right;
     // Start is called before the first frame update
     void Start()
@@ -31,8 +31,8 @@ public class Player02Controller : MonoBehaviour
     void Move()
     {
         Vector3 direction = new Vector3(Input.GetAxis("HorizontalKey02"),0,Input.GetAxis("VerticalKey02"));
-        Vector3 rightMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis("HorizontalKey02");
-        Vector3 upMovement = forward * moveSpeed * Time.deltaTime * Input.GetAxis("VerticalKey02");
+        Vector3 rightMovement = right * (gameObject.GetComponent<shooting>().moveSpeed) * Time.deltaTime * Input.GetAxis("HorizontalKey02");
+        Vector3 upMovement = forward * (gameObject.GetComponent<shooting>().moveSpeed) * Time.deltaTime * Input.GetAxis("VerticalKey02");
 
         Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
         

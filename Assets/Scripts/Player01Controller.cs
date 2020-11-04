@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player01Controller : MonoBehaviour
 {
     [SerializeField]
-    float moveSpeed = 4f;
+    //float moveSpeed ;
     Vector3 forward, right;
     // Start is called before the first frame update
     void Start()
@@ -14,6 +14,7 @@ public class Player01Controller : MonoBehaviour
         forward.y = 0;
         forward = Vector3.Normalize(forward);
         right =Quaternion.Euler(new Vector3(0,90,0)) * forward;
+        
     }
 
     // Update is called once per frame
@@ -23,20 +24,15 @@ public class Player01Controller : MonoBehaviour
             Move();
             if(Input.GetButtonDown("ShootKey")){
             gameObject.GetComponent<shooting>().Shoot();
-                if(gameObject.GetComponent<shooting>().ammoCount==0){
-                    
-                }
+            }
         }
-
-    }
-
     }
 
     void Move()
     {
         Vector3 direction = new Vector3(Input.GetAxis("HorizontalKey"),0,Input.GetAxis("VerticalKey"));
-        Vector3 rightMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis("HorizontalKey");
-        Vector3 upMovement = forward * moveSpeed * Time.deltaTime * Input.GetAxis("VerticalKey");
+        Vector3 rightMovement = right * (gameObject.GetComponent<shooting>().moveSpeed) * Time.deltaTime * Input.GetAxis("HorizontalKey");
+        Vector3 upMovement = forward * (gameObject.GetComponent<shooting>().moveSpeed) * Time.deltaTime * Input.GetAxis("VerticalKey");
 
         Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
         
@@ -46,6 +42,5 @@ public class Player01Controller : MonoBehaviour
         transform.position += upMovement;
     }
 
-    
     
 }

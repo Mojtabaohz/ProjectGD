@@ -30,6 +30,7 @@ public class AmmoBox : MonoBehaviour
             obj.GetComponent<shooting>().bullet = bullet;
             obj.GetComponent<shooting>().dmg = dmg;
             obj.GetComponent<shooting>().reloadSpeed = reloadSpeed;
+            //obj.GetComponent<Player01Controller>().SpeedBuff(4);
             
             // PickUpBox will decrease the spawned box in result manager so there will be limited amount of box at every stage of the game.
             FindObjectOfType<ResultManager>().PickUpBox();
@@ -42,7 +43,10 @@ public class AmmoBox : MonoBehaviour
            // TemporaryBullet.transform.parent = obj.GetComponent<shooting>().transform;
            // TemporaryBullet.GetComponent<Rigidbody>().useGravity = false;
            // TemporaryBullet.GetComponent<Rigidbody>().detectCollisions = false;
-
+            Destroy(gameObject);
+        }
+        else if(obj.gameObject.tag.Equals("bullet")){
+            FindObjectOfType<ResultManager>().PickUpBox();
             Destroy(gameObject);
             
         }
