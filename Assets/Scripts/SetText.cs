@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class SetText : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -24,6 +25,9 @@ public class SetText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.anyKey){
+            SceneManager.LoadScene("TitleScene");
+        }
         
     }
 
