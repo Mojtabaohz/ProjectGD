@@ -43,7 +43,10 @@ public class AmmoBox : MonoBehaviour
            // TemporaryBullet.transform.parent = obj.GetComponent<shooting>().transform;
            // TemporaryBullet.GetComponent<Rigidbody>().useGravity = false;
            // TemporaryBullet.GetComponent<Rigidbody>().detectCollisions = false;
-
+            Destroy(gameObject);
+        }
+        else if(obj.gameObject.tag.Equals("bullet")){
+            FindObjectOfType<ResultManager>().PickUpBox();
             Destroy(gameObject);
             
         }

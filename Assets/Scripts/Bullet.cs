@@ -54,7 +54,7 @@ public class Bullet : MonoBehaviour
         if(other.gameObject.GetComponent<HealthBar>()){
             other.gameObject.GetComponent<HealthBar>().TakeDamage(damage);
         }
-        Debug.Log("destroy bullet");
+        //Debug.Log("destroy bullet");
         Destroy(gameObject,0.1f);
                     
     }
