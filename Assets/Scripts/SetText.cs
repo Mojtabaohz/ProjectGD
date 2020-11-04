@@ -7,6 +7,8 @@ public class SetText : MonoBehaviour
 {
     // Start is called before the first frame update
     public Text result;
+    private float timer = 0;
+    private float delay = 10.0f;
     void Start()
     {
         result.GetComponent<Text>().text = Manager.Instance.result.text;
@@ -25,9 +27,13 @@ public class SetText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.anyKey){
+        timer += Time.deltaTime;
+        if(timer > delay){
+            if(Input.anyKey){
             SceneManager.LoadScene("TitleScene");
+            }
         }
+        
         
     }
 
