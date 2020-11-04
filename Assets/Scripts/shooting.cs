@@ -20,6 +20,7 @@ public class shooting : MonoBehaviour
     public AudioSource ShootSound;
     public AudioSource ReloadSound;
     public AudioSource UziSound;
+    public AudioSource SniperSound;
     public float moveSpeed;
     public float MS = 4f;
     // Start is called before the first frame update
@@ -61,11 +62,13 @@ public class shooting : MonoBehaviour
             
             TemporaryBullethandler.GetComponent<Bullet>().collisionEnable = true;
             Destroy(TemporaryBullethandler, 6.0f);
-                if (bulletSpeed>1000){
-                    UziSound.Play(); 
+                if (bulletSpeed<=1500){
+                    ShootSound.Play(); 
                 }
-                else{
-                    ShootSound.Play();
+                else if (bulletSpeed <= 2000) {
+                    UziSound.Play();
+                } else {
+                    SniperSound.Play();
                 }                
             }
             else{
