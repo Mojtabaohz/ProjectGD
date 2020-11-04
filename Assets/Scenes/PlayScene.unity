@@ -5604,6 +5604,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9092599853123321095, guid: 1640cbc5ca705a44aae7be95f3b323c2,
         type: 3}
+    - target: {fileID: 7851556810256387884, guid: 2f59b66c3bf203743a620bf48a90e539,
+        type: 3}
+      propertyPath: Chaos
+      value: 
+      objectReference: {fileID: 7417290387592399081, guid: 7ac57249e1ddaa14780b89d03c233e91,
+        type: 3}
+    - target: {fileID: 7851556810256387884, guid: 2f59b66c3bf203743a620bf48a90e539,
+        type: 3}
+      propertyPath: chaosrate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7851556810256387884, guid: 2f59b66c3bf203743a620bf48a90e539,
+        type: 3}
+      propertyPath: yPos
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7851556810256387885, guid: 2f59b66c3bf203743a620bf48a90e539,
         type: 3}
       propertyPath: m_Name
