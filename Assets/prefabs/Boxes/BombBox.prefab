@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 20
   SelfDmg: 0
-  bulletSpeed: 400
+  bulletSpeed: 600
   reloadSpeed: 2
   ammoCount: 2
   aoe: 0

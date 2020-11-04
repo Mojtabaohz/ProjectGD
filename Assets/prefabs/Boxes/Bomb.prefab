@@ -173,8 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 7417290387592399081}
-  bulletSpeed: 400
-  dmg: 100
+  bulletSpeed: 600
+  dmg: 20
   aoe: 0
   aoeDmg: 0
   explosive: 1
