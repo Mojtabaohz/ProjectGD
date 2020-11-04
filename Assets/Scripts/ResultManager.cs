@@ -11,6 +11,7 @@ public class ResultManager : MonoBehaviour
     public Vector3 player01RP;
     public GameObject player02;
     public Vector3 player02RP;
+    public GameObject Chaos;
 
     [SerializeField]
     public int xMaxPos = 40;
@@ -19,12 +20,14 @@ public class ResultManager : MonoBehaviour
     public int zMinPos = 5;
     public int yPos = 4;
     public float spawnRate = 2f;
+    public float chaosrate = 10f;
     public int maxAmmoBox = 2;
     private int spawnedBox = 0 ;
     public GameObject[] newWeapons;
     public GameObject defaultWeapon;
 
     protected float Timer;
+    protected float ChaosTimer;
     
 
     void Start()
@@ -43,14 +46,8 @@ public class ResultManager : MonoBehaviour
             Respawning();
         }
 
-        if(spawnedBox <= maxAmmoBox ){
-        Timer += Time.deltaTime;
-            if(Timer >= spawnRate){
-                Timer = 0;
-                spawnedBox += 1;
-                Instantiate(RandomBox(),RandomPos(),Quaternion.identity);
-            }
-        }
+        SpawnBox();
+        ChaosSpawner();
         
     }
 
@@ -96,5 +93,23 @@ public class ResultManager : MonoBehaviour
 
     public void PickUpBox(){
         spawnedBox -= 1;
+    }
+
+    public void SpawnBox(){
+        if(spawnedBox <= maxAmmoBox ){
+        Timer += Time.deltaTime;
+            if(Timer >= spawnRate){
+                Timer = 0;
+                spawnedBox += 1;
+                Instantiate(RandomBox(),RandomPos(),Quaternion.identity);
+            }
+        }
+    }
+    public void ChaosSpawner(){
+        ChaosTimer += Time.deltaTime;
+            if(ChaosTimer >= chaosrate){
+                ChaosTimer = 0;
+                Instantiate(Chaos,RandomPos(),Quaternion.identity);
+            }
     }
 }
