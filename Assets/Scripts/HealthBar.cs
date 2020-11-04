@@ -31,6 +31,17 @@ public class HealthBar : MonoBehaviour
         }
         
     }
+    public void Heal(int heal){
+        if(currentHealth+heal > maxHealth){
+            currentHealth = maxHealth;
+            SetHealth(currentHealth);
+        }
+        else{
+            currentHealth += heal;
+            SetHealth(currentHealth);
+        }
+        
+    }
 
     public void SetHealth(int health){
         slider.value = health; 

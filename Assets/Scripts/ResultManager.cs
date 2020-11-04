@@ -11,7 +11,7 @@ public class ResultManager : MonoBehaviour
     public Vector3 player01RP;
     public GameObject player02;
     public Vector3 player02RP;
-    public GameObject Chaos;
+    public GameObject[] Chaos;
 
     [SerializeField]
     public int xMaxPos = 40;
@@ -108,8 +108,9 @@ public class ResultManager : MonoBehaviour
     public void ChaosSpawner(){
         ChaosTimer += Time.deltaTime;
             if(ChaosTimer >= chaosrate){
+                GameObject tempChaos = Chaos[Random.Range(0,Chaos.Length)];
                 ChaosTimer = 0;
-                Instantiate(Chaos,RandomPos(),Quaternion.identity);
+                Instantiate(tempChaos,RandomPos(),Quaternion.identity);
             }
     }
 }
