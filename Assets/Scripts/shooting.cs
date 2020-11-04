@@ -21,7 +21,7 @@ public class shooting : MonoBehaviour
     public AudioSource ReloadSound;
     public AudioSource UziSound;
     public float moveSpeed;
-    public const float MS = 4f;
+    public float MS = 4f;
     // Start is called before the first frame update
     void Start()
     {
