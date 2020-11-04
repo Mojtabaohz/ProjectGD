@@ -4868,7 +4868,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d9f57be41f5f449baddd0e82ef64ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BombSound: {fileID: 8847493504496415336}
 --- !u!82 &8847493504496415336
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4880,7 +4879,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b6fd54b53288c2445883050ec40f3997, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
