@@ -5,7 +5,7 @@ using UnityEngine;
 public class BuffBox : MonoBehaviour
 {
     [SerializeField]
-    public int selfHealth = 0;
+    public int selfHealth;
     public int baseHealth;
     public int speedBuff;
     public float speedBuffDuration;

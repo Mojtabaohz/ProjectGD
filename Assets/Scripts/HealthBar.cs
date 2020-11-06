@@ -32,13 +32,15 @@ public class HealthBar : MonoBehaviour
         
     }
     public void Heal(int heal){
-        if(currentHealth+heal > maxHealth){
+        if(currentHealth+heal >= maxHealth){
             currentHealth = maxHealth;
             SetHealth(currentHealth);
+            //Debug.Log("Heal function call in if");
         }
         else{
             currentHealth += heal;
             SetHealth(currentHealth);
+            //Debug.Log("Heal function call in else");
         }
         
     }
